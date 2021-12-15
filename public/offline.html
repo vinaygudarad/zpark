@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper"><span class='reload'>&#x21bb;</span>
+        <h1 class="offline">Please check your internet connection.</h1>
+    </div>
+</body>
+<style>
+    * {
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #282828;
+        color: white;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+
+    .offline {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+
+    .reload {
+        font-size: 2.5em;
+        display: block;
+        margin-bottom: 10px;
+        animation: rotation 2s infinite linear;
+    }
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(359deg);
+        }
+    }
+</style>
+
+</html>

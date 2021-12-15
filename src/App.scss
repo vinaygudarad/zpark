@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+$background-color: #282828;
+$primary-color: yellow;
+$secondary-color: #ffffff;
+$logo-font: "Abel", sans-serif;
+$fade-in-time: 3s;
+$fade-in-animation: fadeIn linear $fade-in-time;
+.wrapper {
+  background-color: $background-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.fade-in-out {
+  display: inline-flex;
+  justify-content: center;
+  animation: $fade-in-animation;
+  -webkit-animation: $fade-in-animation;
+  -moz-animation: $fade-in-animation;
+  -o-animation: $fade-in-animation;
+  -ms-animation: $fade-in-animation;
+  img {
+    width: 80%;
+    height: 80%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+$background-color: #282828;
+$primary-color: yellow;
+$secondary-color: #ffffff;
+$btn-fontcolor: #333634;
+$logo-font: "Abel", sans-serif;
+$text-font-family: "Poppins", sans-serif;
+$btn-front-color: #eceb03;
+$btn-bg-color: #7f7e19;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  .Link {
+    text-decoration: none;
+  }
+}
+.btn {
+  &.link-btn {
+    margin-bottom: 40px;
+  }
+}
+.btn-pushable {
+  display: block;
+  font-weight: bold;
+  background: $btn-bg-color;
+  border-radius: 12px;
+  width: 200px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  margin-bottom: 20px;
+  &.btn-logout {
+    width: 100px;
+    font-size: 18px;
+    padding: 0;
+    border-radius: 10px;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    .btn-front {
+      text-align: center;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+  }
+  &.ind-vehicle {
+    min-width: 240px;
+  }
+  .btn-front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-family: $text-font-family;
+    background: $btn-front-color;
+    color: $btn-fontcolor;
+    transform: translateY(-6px);
+  }
+  &.btn-charging {
+    margin-top: 20px;
+    min-width: 260px;
+  }
+}
+.btn-pushable:active .btn-front {
+  transform: translateY(-2px);
+}
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .card-heading {
+    color: #eceb03;
+    text-shadow: 1px 1px #7f7e19;
+  }
+  .op-score {
+    color: #eceb03;
+    text-shadow: 1px 1px #7f7e19;
+    #charge-perc {
+      text-shadow: 1px 1px $btn-fontcolor;
+      font-weight: bold;
+    }
+  }
+}
+
+.btn-logout.btn-pushable {
+  width: 100px;
+  font-size: 18px;
+  padding: 0;
+  border-radius: 10px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  .btn-front {
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+}
+.ind-vehicle.btn-pushable {
+  min-width: 240px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #9f9f9f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //text-align: center;
+  .logo {
+    width: 20%;
+    padding: 5px;
+  }
+}
+$size__site_content_width: 1024px;
+/* Media Queries */
+$media_queries: (
+  "mobile": "only screen and (max-width: 667px)",
+  "tablet":
+    "only screen and (min-width: 668px) and (max-width: $size__site_content_width)",
+  "desktop": "only screen and (min-width: ($size__site_content_width + 1))",
+  "retina2":
+    "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)",
+  "retina3":
+    "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)",
+  "landscape": "screen and (orientation:landscape) ",
+  "portrait": "screen and (orientation:portrait) ",
+);
+
+@mixin for_breakpoint($breakpoints) {
+  $conditions: ();
+  @each $breakpoint in $breakpoints {
+    // If the key exists in the map
+    $conditions: append(
+      $conditions,
+      #{inspect(map-get($media_queries, $breakpoint))},
+      comma
+    );
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
+.captcha-wrapper {
+  #g-recaptcha {
+    @include for_breakpoint(mobile portrait) {
+      transform: scale(0.77);
+      -webkit-transform: scale(0.77);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
+    overflow: hidden;
+  }
+}
+$primary: #cdc727;
+$secondary: yellow;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form__field {
+  font-family: inherit;
+  min-width: 300px;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+/* demo */
+.wrapper {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //min-height: 100vh;
+  //font-size: 1.5rem;
+  background-color: #282828;
+}
+.auth-btn-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+#form__field-VehicleNumber {
+  text-transform: uppercase;
+}

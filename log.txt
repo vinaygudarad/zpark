@@ -1,0 +1,18 @@
+yarn run v1.22.17
+$ react-scripts start
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.31.82/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from /zpark
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/sh4n1/zpark/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /zpark/
+Starting the development server...
+
+Compiled successfully!
+
+You can now view zpark in the browser.
+
+  Local:            http://localhost:3000/zpark
+  On Your Network:  http://192.168.31.82:3000/zpark
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
